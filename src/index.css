@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* Leaflet's own styles (map tiles, zoom buttons, popups). */
+@import "leaflet/dist/leaflet.css";
+
+/*
+  Design tokens: soft oat neutrals + one plum accent.
+  Tailwind turns each --color-* into classes, e.g. bg-cream-50, text-ink-700.
+  (The "cream" names are kept from the earlier palette; the values are now oat.)
+  All text/background pairs used in the app meet WCAG AA contrast (4.5:1).
+*/
+@theme {
+  --color-cream-50: #fcf3ff; /* page background (pale lilac) */
+  --color-cream-100: #f2e4fa; /* soft panels */
+  --color-cream-200: #e5d5ef; /* borders */
+  --color-ink-900: #2b2430; /* main text */
+  --color-ink-700: #4a4150;
+  --color-ink-500: #6b6172; /* quiet text */
+  --color-line: #8a7f90; /* borders of form fields (3:1 against white) */
+  --color-accent-600: #260227; /* buttons, map pins, selected filters (deep plum) */
+  --color-accent-700: #5f3a85; /* eyebrow labels, links, small accent text (lighter purple) */
+  --color-accent-100: #ece3f4; /* soft plum tint */
+  /* Review rating colors (always paired with a text label, never color alone) */
+  --color-sage-100: #e2eedd;
+  --color-sage-800: #2f5a31;
+  --color-honey-100: #faefc8;
+  --color-honey-800: #6e5000;
+  --color-rose-100: #f8dedb;
+  --color-rose-800: #8a2d29;
+  /* The plum family used for pills, titles, pins and the map/list toggle */
+  --color-lilac-300: #d1c6e7; /* filter pills */
+  --color-plum-900: #261725; /* card titles, locations, filter group names */
+  --color-plum-800: #3d233c; /* map pins, map/list toggle, selected filters */
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+html {
+  background: var(--color-cream-50);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  font-size: 17px; /* a touch larger than default for readability */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Clear, high-contrast keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid var(--color-accent-600);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Respect people who ask their device for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom map pins (Leaflet "divIcon"s) */
+.wm-pin {
+  background: transparent;
+  border: 0;
+}
+.wm-pin span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50% 50% 50% 8%;
+  transform: rotate(-45deg);
+  background: var(--color-plum-800);
+  color: #fff; /* the icon inside takes this color */
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgb(43 36 32 / 35%);
+}
+/* The category icon; turned back upright because the pin itself is rotated. */
+.wm-pin span > i {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  transform: rotate(45deg);
+}
+.wm-pin span > i svg {
+  width: 100%;
+  height: 100%;
+}
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+}
+/* Leaflet colors links its own blue; use the app's plum instead. */
+.leaflet-container .leaflet-popup-content a {
+  color: var(--color-accent-700);
+}
+.leaflet-popup-content {
+  margin: 16px 20px;
+}
