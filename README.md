@@ -4,6 +4,24 @@ Find Boston places where your cat is welcome, and see how other cats did.
 Built with React, Vite, TypeScript, Tailwind CSS and Leaflet (OpenStreetMap tiles, no API key),
 with **Supabase** as the backend (database + admin login).
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/home-desktop.png" alt="Catlas home page on desktop: a welcome message, first-outing tips, search, filters, the list of places and a map of Boston" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/place-desktop.png" alt="A place page on desktop showing the place's cat policies and amenities" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/home-mobile.png" alt="Catlas on a phone, showing the list of places" width="260">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/map-mobile.png" alt="Catlas on a phone, showing the map view with pins for each place" width="260">
+</p>
+
+<p align="center"><sub>The places shown are fictional samples.</sub></p>
+
 ## Run it
 
 You need Node 20.19+. From this folder:
