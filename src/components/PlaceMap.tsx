@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import type { PlaceWithStats } from "@/data/types";
 import { iconSvg, type IconName } from "@/lib/icons";
 import { categoryInfo } from "@/lib/options";
-import { SampleBadge } from "./ui";
 
 const BOSTON: L.LatLngTuple = [42.3601, -71.0589];
 
@@ -102,7 +101,6 @@ export default function PlaceMap({
                 </p>
                 <p className="font-serif text-xl leading-tight font-semibold text-plum-900">{p.name}</p>
                 <p className="text-sm text-plum-900">{p.neighborhood}</p>
-                {p.isSample && <SampleBadge />}
                 <p className="pt-1">
                   <Link to={`/places/${p.slug}`} className="text-sm font-semibold text-accent-700 underline">
                     View details →

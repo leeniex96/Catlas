@@ -145,7 +145,7 @@ numbered files in `supabase/migrations/`, applied in order after `schema.sql`).
 design/
   logo-options/         Catlas logo ideas as SVG files (the header uses g-line-pin.svg)
 public/
-  favicon.svg           The browser-tab icon
+  favicon.png           The browser-tab icon (48x48, from the Figma Favicon frame)
 supabase/
   schema.sql            Tables, security rules, sign-up function (already applied)
   seed.sql              The 15 fictional sample places + reviews (already loaded)

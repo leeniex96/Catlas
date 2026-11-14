@@ -5,7 +5,7 @@ import Icon from "@/components/Icon";
 import PhotoSection from "@/components/PhotoSection";
 import ReviewBar from "@/components/ReviewBar";
 import ReviewForm from "@/components/ReviewForm";
-import { Badge, Card, SampleBadge } from "@/components/ui";
+import { Badge, Card } from "@/components/ui";
 import {
   AMENITIES,
   CAT_RULES,
@@ -72,18 +72,11 @@ export default function PlaceDetailPage() {
           <Badge tone="accent">
             <Icon name={category.icon} className="h-4 w-4" /> {category.label}
           </Badge>
-          {p.isSample && <SampleBadge />}
         </div>
         <h1 className="text-3xl leading-tight font-semibold sm:text-4xl">{p.name}</h1>
         <p className="mt-1 text-lg text-ink-700">{p.neighborhood}</p>
         {p.description && <p className="mt-3 max-w-prose text-lg">{p.description}</p>}
       </header>
-
-      {p.isSample && (
-        <p className="mb-6 rounded-2xl bg-honey-100 p-4 text-honey-800">
-          This is a fictional sample listing that shows what a place on Catlas looks like. It isn’t a real business.
-        </p>
-      )}
 
       <Card className="mb-6">
         <h2 className="font-serif text-2xl font-semibold">Cat policies</h2>
