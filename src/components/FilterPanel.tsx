@@ -32,7 +32,7 @@ function Group({
 }) {
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-2 text-sm font-semibold tracking-wide text-plum-900 uppercase">{legend}</legend>
+      <legend className="mb-2 text-xs font-semibold tracking-wide text-plum-900 uppercase">{legend}</legend>
       <div className="flex flex-wrap gap-1.5">
         {options.map((o) => (
           <ChoiceChip
@@ -71,7 +71,7 @@ export default function FilterPanel({ filters, onToggle, onClear }: Props) {
 
       <div
         id="filter-body"
-        className={`${open ? "mt-3 block" : "hidden"} space-y-5 rounded-3xl border border-cream-200 bg-white p-5 lg:mt-0 lg:block`}
+        className={`${open ? "mt-3 block" : "hidden"} space-y-8 rounded-3xl border border-cream-200 bg-white p-5 lg:mt-0 lg:block`}
       >
         <div className="hidden items-center justify-between lg:flex">
           <h2 className="text-xl font-semibold">Filters</h2>
